@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: shopbot
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.1
+          temperature: 0.2
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+shopbot:
+  # v1 = good prompt, v2-weak = deliberately weak prompt (used for the Week 5 regression demo)
+  version: v1
